@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LivePulse Analytics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="dashboard">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">◈</span>
+        <h2>LivePulse<span>.</span></h2>
+      </div>
+
+      <div class="live-status">
+        <span class="status-dot"></span>
+        LIVE MONITORING
+      </div>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">ANALYTICS OVERVIEW</p>
+        <h1>Activity Monitor</h1>
+        <p class="subtitle">Real-time performance tracking.</p>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+
+      <article class="stat-card">
+        <p>Current Reading</p>
+        <h2 id="currentReading">--</h2>
+        <span class="stat-note">Live value</span>
+      </article>
+
+      <article class="stat-card">
+        <p>Average Reading</p>
+        <h2 id="averageReading">--</h2>
+        <span class="stat-note">Last 10 readings</span>
+      </article>
+
+      <article class="stat-card">
+        <p>Peak Reading</p>
+        <h2 id="peakReading">--</h2>
+        <span class="stat-note">Highest recorded</span>
+      </article>
+
+    </section>
+
+    <section class="chart-card">
+
+      <div class="chart-header">
+        <div>
+          <p class="eyebrow">LIVE PERFORMANCE</p>
+          <h3>Activity Trend</h3>
+        </div>
+
+        <span class="chart-period">REAL TIME</span>
+      </div>
+
+      <div class="chart-area" id="chartArea">
+        <svg viewBox="0 0 600 200" width="100%" height="200" aria-label="Activity trend chart">
+          <circle id="currentPoint" r="5" fill="#7d9cff" />
+          <g id="readingPoints"></g>
+          <polyline
+            id="trendLine"
+            fill="none"
+            stroke="#7d9cff"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+
+      <div class="chart-footer">
+        <span>Incoming data</span>
+        <span id="readingCount">0 readings</span>
+      </div>
+
+    </section>
+
+    <section class="controls">
+      <button id="pauseBtn">Pause updates</button>
+      <span id="statusText">Monitoring active</span>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
